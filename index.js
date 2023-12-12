@@ -12,7 +12,6 @@ app.use(
   })
 );
 
-// Add the following middleware to handle JSON data
 app.use(express.json());
 
 const mock_db = require("./mock_db.js");
@@ -28,7 +27,6 @@ const authenticateUser = (req, res, next) => {
     return res.status(401).json({ message: "Unauthorized: Invalid token" });
   }
 
-  // Mock user for demonstration purposes
   const user = {
     id: 1,
     username: "mockUser",
